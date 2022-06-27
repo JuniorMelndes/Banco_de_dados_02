@@ -1,0 +1,42 @@
+CREATE OR REPLACE TYPE TELEFONE_OBJ_TYPE AS OBJECT(
+    pais   CHAR(3),
+    ddd    CHAR(2),
+    numero CHAR(9)
+);
+
+CREATE OR REPLACE TYPE ENDERECO_OBJ_TYPE AS OBJECT(
+    rua         VARCHAR2(20),
+    numero      VARCHAR2(5),
+    complemento VARCHAR2(10),
+    bairro      VARCHAR2(20),
+    cidade      VARCHAR2(20),
+    estado      CHAR(2)
+);
+
+CREATE OR REPLACE TYPE CONTRIBUINTE_OBJ_TYPE AS OBJECT(
+    cpf         VARCHAR2(11),
+    nome        VARCHAR2(30),
+    nascimento  DATE,
+    telefone    TELEFONE_OBJ_TYPE,
+    endereco    ENDERECO_OBJ_TYPE
+);
+
+CREATE TABLE CONTRIBUINTE_OBJ_TAB OF CONTRIBUINTE_OBJ_TYPE;
+
+DESCRIBE CONTRIBUINTE_OBJ_TAB;
+
+INSERT INTO CONTRIBUINTE_OBJ_TAB VALUES(CONTRIBUINTE_OBJ_TYPE('00123456789', 'José Mario', '06/06/1999', TELEFONE_OBJ_TYPE('055', '83', '987969787'), ENDERECO_OBJ_TYPE('Rua bezerra', '666', 'sindicato', 'centro', 'Poção', 'PE')));
+
+SELECT * FROM CONTRIBUINTE_OBJ_TAB;
+
+ALTER TYPE CONTRIBUINTE_OBJ_TYPE ADD MEMBER FUNCTION format_phone RETURN VARCHAR2 CASCADE;
+
+CREATE OR REPLACE TYPE BODY CONTRIBUINTE_OBJ_TYPE AS
+    MEMBER FUNCTION format_phone RETURN VARCHAR2
+    IS
+    BEGIN
+        RETURN ('+' || self.telefone.pais || ' ' || '(' || self.telefone.ddd || ')' || ' ' || self.telefone.numero);
+    END;
+END;
+
+SELECT d.format_phone() as Numero FROM CONTRIBUINTE_OBJ_TAB d;
