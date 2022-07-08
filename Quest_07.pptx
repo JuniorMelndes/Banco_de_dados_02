@@ -1,0 +1,65 @@
+CREATE TYPE DIMENSAO_TYPE AS OBJECT(
+    comprimento NUMBER,
+    largura     NUMBER,
+    altura      NUMBER
+);
+
+CREATE OR REPLACE TYPE PRODUTO_TYPE AS OBJECT(
+    produto_id      NUMBER,
+    nome            VARCHAR2(20),
+    dimensao        DIMENSAO_TYPE,
+    cor             VARCHAR2(15)
+);
+
+CREATE TABLE PRODUTO_TAB OF PRODUTO_TYPE(
+    CONSTRAINT produto_id_pk PRIMARY KEY (produto_id),
+    CONSTRAINT nome_nn nome NOT NULL,
+    CONSTRAINT altura_ck_zero CHECK(dimensao.altura > 0),
+    CONSTRAINT largura_ck_zero CHECK(dimensao.largura > 0),
+    CONSTRAINT comprimento_ck_zero CHECK(dimensao.comprimento > 0)
+);
+
+DECLARE
+prod1 PRODUTO_TYPE;
+prod2 PRODUTO_TYPE;
+prod3 PRODUTO_TYPE;
+
+BEGIN
+
+prod1 := NEW PRODUTO_TYPE(100, 'Mesa', DIMENSAO_TYPE(3,1,1), 'Marrom');
+prod2 := NEW PRODUTO_TYPE(101, 'Sofa', DIMENSAO_TYPE(4,2,2), 'Cinza');
+prod3 := NEW PRODUTO_TYPE(102, 'Mesa', NULL, 'Preta');
+
+INSERT INTO PRODUTO_TAB VALUES(prod1);
+INSERT INTO PRODUTO_TAB VALUES(prod2);
+INSERT INTO PRODUTO_TAB VALUES(prod3);
+END;
+
+--Comando para evitar o erro de "Atomic null violation"
+UPDATE  PRODUTO_TAB a 
+SET     a.dimensao = DIMENSAO_TYPE(null, null, null) 
+WHERE   a.dimensao IS NULL;
+
+UPDATE  PRODUTO_TAB p
+SET     p.dimensao.comprimento = 3, p.dimensao.largura = 1, p.dimensao.altura =1
+WHERE   p.produto_id = 102;
+
+SELECT  REF(p)
+FROM    PRODUTO_TAB p
+WHERE   p.dimensao.altura = 1;
+
+ALTER TYPE PRODUTO_TYPE ADD MEMBER FUNCTION calcula_volume RETURN NUMBER CASCADE;
+
+CREATE OR REPLACE TYPE BODY PRODUTO_TYPE AS
+    MEMBER FUNCTION calcula_volume RETURN NUMBER
+    IS
+    vol NUMBER;
+    BEGIN
+        vol := (SELF.dimensao.altura * SELF.dimensao.comprimento * SELF.dimensao.largura);
+        RETURN (vol);
+    END;
+END;
+
+SELECT      p.nome, p.calcula_volume() as "volumi" 
+FROM        PRODUTO_TAB p
+ORDER BY    p.calcula_volume() DESC;
