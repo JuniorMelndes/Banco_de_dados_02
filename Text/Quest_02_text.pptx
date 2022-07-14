@@ -1,0 +1,12 @@
+(a) Crie um Object Type chamado PROFISSIONAL_TYPE com os seguintes atributos: matricula INTEGER, nome VARCHAR2(30) e admissao DATE.
+(b) Visualize a estrutura do Object Type criado com o comando DESCRIBE.
+(c) Use o Object Type criado anteriormente como molde para criar uma Object Table chamada PROFISSIONAL_OBJ_TAB.
+(d) Usando o método construtor, insira uma linha (Object Row) na Object Table PROFISSIONAL_OBJ_TAB com os seguintes dados: 100, 'José' e SYSDATE.
+(e) Agora, sem usar o método construtor, tente inserir outra linha (Object Row) na Object Table PROFISSIONAL_OBJ_TAB com os seguintes dados: 101, 'Maria' e SYSDATE. Você conseguiu inserir a segunda linha? Qual a sua conclusão?
+(f) Com um comando SELECT, mostre todas as linhas (Object Rows) e colunas da Object Table PROFISSIONAL_OBJ_TAB.
+
+(a) Crie uma tabela relacional chamada PROFISSIONAL_TAB com as seguintes colunas: empregado PROFISSIONAL_TYPE e departamento INTEGER.
+(b) Visualize a estrutura da tabela criada com o comando DESCRIBE.
+(c) Usando o método construtor de PROFISSIONAL_TYPE, insira uma linha na tabela PROFISSIONAL_TAB com os seguintes dados: 100, 'José', SYSDATE e 10.
+(d) Agora, sem usar o método construtor, tente inserir outra linha na tabela PROFISSIONAL_TAB com os seguintes dados: 101, 'Maria', SYSDATE e 11. Você conseguiu inserir a segunda linha? Qual a sua conclusão?
+(e) Com um comando SELECT, mostre todas as linhas e colunas da tabela PROFISSIONAL_TAB.

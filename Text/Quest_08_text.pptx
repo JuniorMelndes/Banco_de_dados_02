@@ -1,0 +1,35 @@
+(a) Crie o Object Type Lider_Type com os atributos: codigo INTEGER, nome VARCHAR2(20).
+
+(b) Crie a Object Table Lider_Tab usando como molde o Object Type lider_type. A coluna codigo deve ser chave primária.
+
+(c) Insira os seguintes objetos na Object Table lider_tab:
+
+10, José
+20, Maria
+
+(d) Crie o Object Type Integrante_Type com os atributos: codigo INTEGER, nome VARCHAR2(20) e lider REF lider_type.
+
+(e) Crie a Object Table Integrante_Tab usando como molde o Object Type Intregrante_type. A coluna codigo deve ser chave primária. A coluna lider deve ser uma chave estrangeira de Lider_Tab.
+
+(f) Insira os seguintes objetos na Object Table integrante_tab:
+
+100, Pedro, Líder=José
+200, Paula, Líder=Maria
+300, Marta, Líder=Maria
+
+(g) Elabore uma consulta SQL para mostrar o nome dos líderes e o nome dos respectivos integrantes.
+
+(h) Crie o Object Type Integrante2_Type com os atributos: codigo INTEGER e nome VARCHAR2(20).
+
+(i) Crie o OBJECT TYPE Integrantes_Type como uma lista de integrantes2. Use: AS TABLE OF.
+
+(j) Crie o OBJECT TYPE Lider2_Type com os seguintes atributos: codigo INTEGER, nome VARCHAR2(20) e integrantes Integrantes_Type.
+
+(k) Crie a OBJECT TABLE Lider2_Tab usando como molde o Object Type Lider2_Type. A coluna codigo deve ser chave primária.
+
+(l) Insira os seguintes objetos na Object Table lider2_tab:
+
+10, José, <(100, Pedro)>
+20, Maria, <(200, Paula),(300, Marta)>
+
+(m) Elabore uma consulta SQL para mostrar o nome dos líderes e o nome dos respectivos integrantes.

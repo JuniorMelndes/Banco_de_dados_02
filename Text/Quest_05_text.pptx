@@ -1,0 +1,25 @@
+(a) Crie o Object Type EMPRESA_TYPE com os seguintes atributos: CNPJ INTEGER, nome_fantasia VARCHAR2(30), pais VARCHAR2(25) e fundacao DATE.
+
+
+(b) Crie o Object Type FUNCIONARIO_TYPE com os seguintes atributos: CPF INTEGER, nome VARCHAR2(30), sexo CHAR(1), nasc DATE e empresa REF EMPRESA_TYPE.
+
+
+(c) Crie a Object Table empresa_tab usando como molde o Object Type empresa_type. O atributo cnpj deve ser a chave primária.
+
+
+
+(d) Crie a Object Table funcionario_tab usando como molde o Object Type funcionario_type. O atributo cpf deve ser a chave primária. O atributo empresa deve ser um chave estrangeira.
+
+
+
+(e) Usando dados fictícios, insira um objeto na Object Table empresa_tab.
+
+
+
+(f) Usando dados fictícios, insira um objeto na Object Table funcionario_tab. O funcionário deve estar associado à empresa inserida na questão anterior.
+
+
+(g) Modifique o Object Type empresa_type para adicionar o método CONTAEMPREGADOS que conte e retorne a quantidade de funcionários de uma empresa. Adicione e implemente o método. O aluno deve ser capaz de determinar o tipo de método, bem como se deve ser implementado como função ou procedure. Dica: para contar, use o comando SELECT COUNT(*) INTO...FROM...WHERE...
+
+
+(h) Usando um comando SQL (SELECT), execute o método criado na questão anterior para exibir o nome fantasia de cada empresa e a quantidade de funcionários.

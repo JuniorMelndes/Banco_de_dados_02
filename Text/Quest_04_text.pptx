@@ -1,0 +1,9 @@
+(a) Crie um Object Type chamado DEPARTMENTS_OBJ com a mesma estrutura da tabela relacional DEPARTMENTS, ou seja, os atributos do primeiro devem corresponder as colunas do segundo. Para visualizar a estrutura de DEPARTMENTS basta usar o comando DESCRIBE.
+
+(b) Cria uma Object_Table chamada DEPARTMENTS_TAB usando como molde o Object Type DEPARTMENTS_OBJ. O atributo department_id deve corresponder a uma chave primária em DEPARTMENTS_TAB.
+
+(c) Usando o comando INSERT INTO...SELECT..., copie as linhas da tabela relacional DEPARTMENTS para a Object Table DEPARTMENTS_TAB.
+
+(d) Modifique o Object Type DEPARTMENTS_OBJ para adicionar e implementar o método conta_dep o qual deve ser capaz de retornar a quantidade de departamentos (objetos) armazenados em DEPARTMENTS_TAB que contém NULO no atributo manager_id. O aluno deve ser capaz de identificar qual deve ser o tipo do método conta_dep.
+
+(e) Execute o método conta_dep e mostre o resultado. Dica: chame o método conta_dep a partir de uma consulta à tabela DUAL.

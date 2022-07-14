@@ -1,0 +1,10 @@
+(a) Crie um Object Type chamado TELEFONE_OBJ_TYPE com os seguintes atributos:
+pais CHAR(3), ddd CHAR(2) e numero CHAR(9).
+(b) Crie um Object Type chamado ENDERECO_OBJ_TYPE com os seguintes atributos:
+rua VARCHAR2(20), numero VARCHAR2(5), complemento VARCHAR2(10), bairro VARCHAR2(20), cidade VARCHAR2(20) e estado CHAR(2).
+(c) Crie um Object Type chamado CONTRIBUINTE_OBJ_TYPE com os seguintes atributos: cpf VARCHAR2(11), nome VARCHAR2(30), nascimento DATE, telefone TELEFONE_OBJ_TYPE e endereco ENDERECO_OBJ_TYPE.
+(d) Use o Object Type CONTRIBUINTE_OBJ_TYPE como molde para criar uma Object Table chamada CONTRIBUINTE_OBJ_TAB.
+(e) Visualize a estrutura da Object Table CONTRIBUINTE_OBJ_TAB.
+(f) Usando o método construtor, insira duas linhas (Object Rows) na Object Table CONTRIBUINTE_OBJ_TAB. Use dados fictícios de sua escolha.
+(g) Adicione um método chamado format_phone ao Object Type CONTRIBUINTE_OBJ_TYPE para retornar o número de telefone formatado de um determinado objeto. O aluno deve ser capaz de escolher o tipo do método apropriado bem como se o mesmo deve ser implementado como função ou procedure. O formato esperado de número de telefone é +55 (83) 98754-8276. Quando necessário, procure na documentação do Oracle por funções que lidam com dados textuais.
+(h) Escreva um comando SELECT sobre a tabela CONTRIBUINTE_OBJ_TAB para chamar o método criado na questão anterior e mostrar na tela o número do telefone formatado de todos os contribuintes.

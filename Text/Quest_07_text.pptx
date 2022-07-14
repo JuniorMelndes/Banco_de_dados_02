@@ -1,0 +1,17 @@
+(a) Crie o Object Type dimensao_TYPE com os seguintes atributos: comprimento NUMBER, largura NUMBER e altura NUMBER.
+
+(b) Crie o Object Type produto_TYPE com os seguintes atributos: id NUMBER, nome VARCHAR2(20), dimensao DIMENSAO_TYPE e cor VARCHAR2(15).
+
+(c) Crie uma Object Table produto_tab usando como molde o Object Type produto_TYPE. Atenção: o atributo id deve ser uma chave primária. O nome do produto não pode ser nulo. As dimensões altura, largura e comprimento devem ser maiores do que zero.
+
+(d) Instancie e insira os seguintes objetos em Produto_tab:
+
+100, Mesa, 3,1,1, Marrom
+101, Sofa, 4,2,2, Cinza
+102, Mesa, null, Preta
+
+(e) Atualize as dimensões do produto 102 para comprimento = 3, largura = 1 e altura = 1.
+
+(f) Exiba o OID dos objetos contidos em Produto_tab cuja altura é igual a 1.
+
+(g) Elabore uma consulta para mostrar o nome dos produtos e sua área (comprimento * altura * dimensão). Ordene de modo decrescente pela área.

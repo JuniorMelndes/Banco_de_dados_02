@@ -1,0 +1,25 @@
+(a) Crie o Object Type MEMBRO_TYPE com os seguintes atributos: CPF INTEGER, nome VARCHAR2(30), sexo CHAR(1) e nasc DATE.
+
+(b) Crie os seguintes Object Types como subtipos de MEMBRO_TYPE:
+
+- DOCENTE_TYPE: siape INTEGER e admissao DATE;
+- DISCENTE_TYPE: matricula INTEGER e curso VARCHAR2(20).
+
+(c) Crie uma Object Table MEMBRO_TAB usando como molde o Object Type MEMBRO_TYPE. O atributo CPF deve ser definido como chave primária.
+
+(d) Usando o Princípio da Substituição, insira os seguintes objetos em MEMBRO_TAB:
+
+docente_type: <73635526728, PEDRO, M, 11-JAN-1972, 1477839, 19-JAN-1996>
+docente_type: <11165527828, JOANA, F, 20-JUN-1962, 8276151, 16-NOV-2000>
+discente_type: <73688876721, SANDRA, F, 17-JAN-2000, 201928726, COMPUTACAO>
+discente_type: <22225526726, RENATO, M, 30-JUN-1999, 202018736, ELETRICA>
+
+(e) Adicione o método CALCULATEMPO ao Object Type MEMBRO_TYPE para calcular e retornar a idade de um membro. A idade retornada deve ser um inteiro.
+
+(f) Implemente o método CALCULATEMPO adicionado na letra (e).
+
+(g) Adicione o método calculatempo ao Object Type DOCENTE_TYPE de forma a sobrescrever o método herdado de MEMBRO_TYPE.
+
+(h) Reescreva o método CALCULATEMPO do Object Type DOCENTE_TYPE de modo a calcular a quantidade de anos trabalhados por um docente. A quantidade deve ser um inteiro.
+
+(i) Elabore uma consulta SQL para executar o método CALCULATEMPO para todos os objetos armazenados em MEMBRO_TAB. Mostre o resultado da consulta.

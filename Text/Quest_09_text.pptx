@@ -1,0 +1,7 @@
+(a) Crie os Object Types necessários para obter a Object Table Politico_Tab. Em seguida, crie a object table propriamente dita observando a descrição abaixo.
+
+(b) Insira a object row ilustrada na figura acima.
+
+(c) Em relação ao político de nome José, atualize o nome do assessor Pedro para Peter.
+
+(d) Elabore uma consulta para mostrar o nome dos políticos, dos seus assessores e dos secretários dos assessores.

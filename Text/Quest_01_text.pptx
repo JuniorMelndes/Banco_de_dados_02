@@ -1,0 +1,8 @@
+(b) Crie o esquema HR Data.
+(c) Visualize a estrutura da tabela employees. Atenção: visualizar a estrutura é diferente de visualizar os dados.
+(d) Visualize os dados da tabela employees. Todos os empregados recebem comissão? Explique sua resposta.
+(e) A coluna salary da tabela employees refere-se ao salário fixo mensal de um empregado. O valor total do salário mensal também deve considerar a comissão recebida (coluna commission_pct). Elabore uma consulta SQL para mostrar o salário total mensal de cada empregado.
+(f) Todos os empregados estão associados a um departamento? E o contrário? Use FULL OUTER JOIN para descobrir. Explique sua resposta.
+(g) O que significa a coluna manager_id da tabela employees?
+(h) Quantas linhas possuem as tabelas employees e departments?
+(i) Mediante uma consulta à tabela DUAL, verifique a data de hoje (use a função SYSDATE). Como seria possível retornar apenas data e hora?
